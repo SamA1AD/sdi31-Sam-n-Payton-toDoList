@@ -10,7 +10,7 @@ var doneList = document.querySelector('.done');
 let test = (input) => {
     let newRowItem = document.createElement('tr');
     let checkBox = Object.assign(document.createElement('input'), {type: "checkbox"});
-    let checkBoxRow = document.createElement('td');
+    let checkBoxRow = document.createElement('td', id='checkBox-row');
     let inputRow = document.createElement('td');
     let buttonRow = document.createElement('td');
     inputRow.innerText = input;
@@ -24,12 +24,13 @@ let test = (input) => {
         return toDoList.contains(newRowItem) ? doneList.appendChild(newRowItem) : toDoList.appendChild(newRowItem)
     });
     // newRowItem.appendChild(input);
-    checkBoxRow = checkBox
+    checkBoxRow.appendChild(checkBox);
     buttonRow.appendChild(deleteButton);
     newRowItem.appendChild(checkBoxRow);
     newRowItem.appendChild(inputRow);
     newRowItem.appendChild(buttonRow);
     toDoList.appendChild(newRowItem);
+
 }
 //button added to event
 addToListButton.addEventListener('click', () => test(userInput['value']))

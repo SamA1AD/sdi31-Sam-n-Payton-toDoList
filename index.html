@@ -8,26 +8,29 @@
 </head>
 <body>
     <header>
-        <h1>To Do List</h1>
+        <h1 class="title">To Do List</h1>
     </header>
     <!--add enter event to input-->
     <input class="userInput" type="text" value="" placeholder='add to do...'>
     <button id="addToList">Add to List</button>
+    <section class="container">
     <table class="to-do">
-        <tr>
-            <th>To-Do</th>
-        </tr>
+        <th colspan= 3>
+            To-Do
+        </th>
+
     </table>
     <table class="done">
-        <tr>
-            <th>Done</th>
-        </tr>
+        <th colspan= 3>
+            Done
+        </th>
+
     </table>
+    </section>
     <script src="index.js"></script>
 </body>
 </html>
-
-<!--   TABLE FORMAT EXAMPLE 
+<!--   TABLE FORMAT EXAMPLE
     <table>
     <tr>
         <th>Company</th>

@@ -1,0 +1,52 @@
+header{
+  background-color: black;
+  padding: 0;
+}
+
+.title{
+  color:white;
+  text-align: center;
+}
+
+body{
+  display: grid;
+  background-color: rgb(230, 189, 8);
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr  1fr ;
+  bottom: 0;
+  height: 90vh;
+  align-items: start;
+  background-color: rgba(241, 239, 239, 0.6)
+}
+
+table.to-do{
+grid-column: 1;
+justify-content: start;
+
+}
+table tr td:first-child{
+ width: 5px;
+}
+table tr td:last-child{
+ width: 5px;
+}
+.done tr td{
+  text-decoration: line-through;
+}
+
+
+.done {
+  grid-column: 2;
+}
+
+table, td, th{
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+input[type="checkbox"] {
+
+}
