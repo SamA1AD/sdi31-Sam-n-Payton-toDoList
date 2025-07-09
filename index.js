@@ -10,21 +10,33 @@ var doneList = document.querySelector('.done');
 
 //function for button
 let test = (input) => {
-    let newLineItem = document.createElement('li');
-    newLineItem.innerHTML = input
+    let newRowItem = document.createElement('tr');
+    let numberRow = document.createElement('td');
     let checkBox = document.createElement('input');
-        checkBox.type = 'checkbox'
+    let checkBoxRow = document.createElement('td');
+    let inputRow = document.createElement('td');
+    let buttonRow = document.createElement('td');
+    inputRow.innerText = input;
     let deleteButton = document.createElement('button');
-    deleteButton.innerText = "Delete";
-    deleteButton.addEventListener('click', () => {return doneList.contains(newLineItem) ? doneList.removeChild(newLineItem) : toDoList.removeChild(newLineItem)});
-    checkBox.addEventListener('click', () => {
-        // toDoList.removeChild(newLineItem);
-        doneList.appendChild(newLineItem);
+    deleteButton.innerText = "X";
+    checkBox.type = 'checkbox';
+    checkBox.name = input;
+    deleteButton.addEventListener('click', () => {
+        return doneList.contains(newRowItem) ? doneList.removeChild(newRowItem) : toDoList.removeChild(newRowItem)
     });
-    newLineItem.appendChild(checkBox);
-    // newLineItem.appendChild(input);
-    newLineItem.appendChild(deleteButton);
-    toDoList.appendChild(newLineItem);
+    checkBox.addEventListener('click', () => {
+        return toDoList.contains(newRowItem) ? doneList.appendChild(newRowItem) : toDoList.appendChild(newRowItem)
+    });
+    // newRowItem.appendChild(input);
+    checkBoxRow.appendChild = checkBox;
+    buttonRow.appendChild(deleteButton);
+    newRowItem.appendChild(numberRow);
+    newRowItem.appendChild(checkBoxRow);
+    newRowItem.appendChild(inputRow);
+    newRowItem.appendChild(buttonRow);
+    toDoList.appendChild(newRowItem);
+    var index = [...toDoList.children].indexOf(newRowItem);
+    numberRow.innerText = index;
 }
 
 
